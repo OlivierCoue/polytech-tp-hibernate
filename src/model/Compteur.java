@@ -60,5 +60,9 @@ public class Compteur {
 	public void setProprietaire(Personne proprietaire) {
 		this.proprietaire = proprietaire;
 	}
+
+	public List<Plage> getListPlage() {
+		return listPlage;
+	}
 	
 }
