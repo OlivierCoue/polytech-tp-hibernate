@@ -11,6 +11,11 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+/**
+ * 
+ * @author Olivier & Dorian
+ *
+ */
 @Entity
 public class Plage {
 	
@@ -26,8 +31,17 @@ public class Plage {
 		mappedBy="plage",
 		cascade=CascadeType.ALL
 	)
-	final private List<PlageTarif> ListPlageTarif;
+	final private List<PlageTarif> listPlageTarif;
 
+	/**
+	 * 
+	 * @param id
+	 * @param date
+	 * @param heureDebut
+	 * @param heureFin
+	 * @param compteur
+	 * @param KHwConsomme
+	 */
 	public Plage(int id, LocalDate date, LocalTime heureDebut, LocalTime heureFin, Compteur compteur, int KHwConsomme) {
 		this.id = id;
 		this.date = date;
@@ -35,7 +49,7 @@ public class Plage {
 		this.heureFin = heureFin;
 		this.compteur = compteur;
 		this.KHwConsomme = KHwConsomme;
-		this.ListPlageTarif = new ArrayList<>();
+		this.listPlageTarif = new ArrayList<>();
 	}
 
 	public int getId() {
@@ -87,7 +101,12 @@ public class Plage {
 	}
 
 	public List<PlageTarif> getListPlageTarif() {
-		return ListPlageTarif;
+		return listPlageTarif;
+	}
+	
+	@Override
+	public String toString(){
+		return " id : " + this.id + " date : " + this.date + " heureDebut : " + this.heureDebut + " heureFin : " + this.heureFin + " KHwConsomme : " + this.KHwConsomme; 
 	}
 
 }

@@ -4,6 +4,11 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+/**
+ * 
+ * @author Olivier & Dorian
+ *
+ */
 @Entity
 public class PlageTarif {
 	
@@ -15,6 +20,13 @@ public class PlageTarif {
 	@ManyToOne
 	private Tarif tarif;
 	
+	/**
+	 * 
+	 * @param id
+	 * @param KWh
+	 * @param plage
+	 * @param tarif
+	 */
 	public PlageTarif(int id, int KWh, Plage plage, Tarif tarif) {
 		super();
 		this.id = id;
@@ -54,5 +66,11 @@ public class PlageTarif {
 	public void setTarif(Tarif tarif) {
 		this.tarif = tarif;
 	}
+	
+	@Override
+	public String toString(){
+		return " id : " + this.id + " KWh : " + this.KWh; 
+	}
+	
 	
 }

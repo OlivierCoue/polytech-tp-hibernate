@@ -10,8 +10,23 @@ import org.hibernate.Transaction;
 import model.Compteur;
 import model.Plage;
 
+/**
+ * 
+ * @author Olivier & Dorian
+ *
+ */
 public class DAOPlage {
 	
+	/**
+	 * 
+	 * @param id
+	 * @param date
+	 * @param heureDebut
+	 * @param heureFin
+	 * @param compteur
+	 * @param KHwConsomme
+	 * @return
+	 */
 	static public Plage creerPlage(int id, LocalDate date, LocalTime heureDebut, LocalTime heureFin, Compteur compteur, int KHwConsomme){
 		try{
 			EntityManager em = DbUtil.getEm();

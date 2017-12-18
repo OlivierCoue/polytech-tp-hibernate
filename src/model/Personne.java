@@ -7,6 +7,11 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+/**
+ * 
+ * @author Olivier & Dorian
+ *
+ */
 @Entity
 public class Personne {
 	
@@ -17,6 +22,12 @@ public class Personne {
 	@OneToMany(mappedBy="proprietaire")
 	final private List<Compteur> listCompteur;
 	
+	/**
+	 * 
+	 * @param numeroSecu
+	 * @param adresse
+	 * @param numTelephone
+	 */
 	public Personne(String numeroSecu, String adresse, String numTelephone) {
 		super();
 		this.numeroSecu = numeroSecu;
@@ -51,6 +62,11 @@ public class Personne {
 
 	public List<Compteur> getListCompteur() {
 		return listCompteur;
+	}
+	
+	@Override
+	public String toString(){
+		return " numeroSecu : " + this.numeroSecu + " adresse : " + this.adresse + " numTelephone : " + this.numTelephone; 
 	}
 	
 }

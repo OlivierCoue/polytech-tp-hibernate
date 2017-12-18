@@ -9,6 +9,11 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+/**
+ * 
+ * @author Olivier & Dorian
+ *
+ */
 @Entity
 public class Compteur {
 	@Id
@@ -20,6 +25,13 @@ public class Compteur {
 	@OneToMany(mappedBy="compteur")
 	final private List<Plage> listPlage;
 	
+	/**
+	 * 
+	 * @param numero
+	 * @param adresse
+	 * @param dateActivation
+	 * @param proprietaire
+	 */
 	public Compteur(int numero, String adresse, LocalDate dateActivation, Personne proprietaire) {
 		super();
 		this.numero = numero;
@@ -63,6 +75,11 @@ public class Compteur {
 
 	public List<Plage> getListPlage() {
 		return listPlage;
+	}
+	
+	@Override
+	public String toString(){
+		return " numero : " + this.numero + " adresse : " + this.adresse; 
 	}
 	
 }

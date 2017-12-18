@@ -7,8 +7,19 @@ import org.hibernate.Transaction;
 import model.TarifCreux;
 import model.TarifPlein;
 
+/**
+ * 
+ * @author Olivier et Dorian
+ *
+ */
 public class DAOTarif {
 	
+	/**
+	 * 
+	 * @param code
+	 * @param prixKWh
+	 * @return
+	 */
 	static public TarifPlein creerTarifPlein(String code, float prixKWh){
 		try{
 			EntityManager em = DbUtil.getEm();
@@ -26,6 +37,13 @@ public class DAOTarif {
 		}
 	}
 	
+	/**
+	 * 
+	 * @param code
+	 * @param prixKWh
+	 * @param pourcentageReduction
+	 * @return
+	 */
 	static public TarifCreux creerTarifCreux(String code, float prixKWh, int pourcentageReduction){
 		try{
 			EntityManager em = DbUtil.getEm();

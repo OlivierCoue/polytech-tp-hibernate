@@ -9,6 +9,11 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
 
+/**
+ * 
+ * @author Olivier & Dorian
+ *
+ */
 @Entity
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 public abstract class Tarif {
@@ -19,6 +24,11 @@ public abstract class Tarif {
 	@OneToMany(mappedBy="tarif")
 	final protected List<PlageTarif> ListPlageTarif;
 	
+	/**
+	 * 
+	 * @param code
+	 * @param prixKWh
+	 */
 	public Tarif(String code, float prixKWh) {
 		super();
 		this.code = code;
@@ -45,5 +55,6 @@ public abstract class Tarif {
 	public List<PlageTarif> getListPlageTarif() {
 		return ListPlageTarif;
 	}
+
 	
 }
